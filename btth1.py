@@ -24,31 +24,42 @@ while choice != 5:
 
         match choice:
             case 1:
-                account_name = input("Nhập tên tài khoản người đăng: ")
-                title_video = input("Nhập tiêu đề video: ")
-                dec_video = input("Nhập mô tả video: ")
-                hashtag = input("Nhập hashtag (cách nhau bằng dấu ,): ").split(",")
+                while True: 
+                    account_name = input("Nhập tên tài khoản người đăng: ")
+                    title_video = input("Nhập tiêu đề video: ")
+                    dec_video = input("Nhập mô tả video: ")
+                    hashtag = input("Nhập hashtag (cách nhau bằng dấu ,): ").split(",")
 
-                if account_name == "" or title_video == "" or dec_video == "":
-                    print("")
+                    if account_name == "":
+                        print("Lỗi tên đăng nhập không được rỗng")
+                        continue
 
-                print("=== Thông xin in ra ===")
-                print(f"Tên tài khoản: {account_name.strip()}")
-                print(f"Tiêu đề      : {title_video.strip()}")
-                print(f"Mô tả        : {dec_video.strip()}")
+                    if title_video == "":
+                        print("Lỗi tiêu đề không được rỗng")
+                        continue
 
-                print(f"Độ dài mô tả video: {len(dec_video)}")
-                print(f"Số lượng từ trong mô tả video: {len(dec_video.split(" "))}")
+                    if dec_video == "":
+                        print("Lỗi mô tả không được rỗng")
+                        continue
 
-                print("Danh sách hashtag:", end=" ")
-                for i in range(len(hashtag)):
-                    print(f"[{hashtag[i].strip()}]", end="")
+                    print("=== Thông xin in ra ===")
+                    print(f"Tên tài khoản: {account_name.strip()}")
+                    print(f"Tiêu đề      : {title_video.strip()}")
+                    print(f"Mô tả        : {dec_video.strip()}")
 
-                print(f"\nSố lượng hashtag: {len(hashtag)}")
+                    print(f"Độ dài mô tả video: {len(dec_video)}")
+                    print(f"Số lượng từ trong mô tả video: {len(dec_video.split())}")
 
-                print(f"{dec_video.strip().lower()}")
-                print(f"{dec_video.strip().upper()}")
+                    print("Danh sách hashtag:", end=" ")
+                    for i in range(len(hashtag)):
+                        print(f"[{hashtag[i].strip()}]", end="")
 
+                    print(f"\nSố lượng hashtag: {len(hashtag)}")
+
+                    print(f"{dec_video.strip().lower()}")
+                    print(f"{dec_video.strip().upper()}")
+
+                    break
             case 2:
                 if account_name == 'h':
                     account_name = input("Nhập tên tài khoản người đăng: ")
